@@ -1,6 +1,6 @@
 require_relative 'people'
 
-class Student < Item
+class Student < Person
   def learn
     puts "I get it!"
   end

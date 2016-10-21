@@ -1,6 +1,6 @@
 require_relative 'people'
 
-class Instructor < Item
+class Instructor < Person
 
   def teach
     puts "Everything in Ruby is an Object"
