@@ -7,27 +7,32 @@ attr_accessor :item_list
   end
 
   def sub_total
+      all_sub_total = 0
     @item_list.each do |item|
-      all_sub_total += item
+      all_sub_total += item.cost
     end
+    all_sub_total
   end
 
   def tax_total
+      all_tax_total = 0
     @item_list.each do |item|
-      all_tax_total += item
+      all_tax_total += item.total_tax
     end
+    all_tax_total
   end
 
   def total_cost
-    all_tax_total + all_sub_total
+    tax_total + sub_total
   end
 
   def report
-    puts "1 #{name} at $#{cost}"
+    @item_list.each do |item|
+      puts "1 #{item.name} at $#{item.cost}"
+    end
 
-
-    puts "Sales Taxes: #{total_tax}"
-    puts "Total:       #{total_amount}"
+    puts "Sales Taxes: #{tax_total}"
+    puts "Total:       #{total_cost}"
   end
 end
 

@@ -3,16 +3,18 @@ class Item
   attr_reader :exempt, :cost, :import, :sales_tax, :import_tax
 
   def initialize(name, cost, exempt, import, receipt)
-  @name   = name
-  @cost   = cost
-  @exempt = exempt
-  @import = import
+    @name   = name
+    @cost   = cost
+    @exempt = exempt
+    @import = import
 #  @total_cost = cost * tax
-  @cost.to_f
-  receipt.item_list << self
-end
+    @cost.to_f
+    receipt.item_list << self
+    set_sales_tax
+    set_import_tax
+  end
 
-  def exempt?
+  def set_sales_tax
 
     if @exempt
       @sales_tax  = 0
@@ -22,7 +24,7 @@ end
 
   end
 
-  def import?
+  def set_import_tax
 
     if @import
       @import_tax  = @cost * 0.05

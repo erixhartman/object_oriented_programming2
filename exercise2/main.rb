@@ -14,7 +14,8 @@ perfume2 = Item.new("bottle of perfume", 27.99, false, true, receipt3)
 perfume3 = Item.new("bottle of perfume", 18.99, false, false, receipt3)
 hp = Item.new("packet of headache pills", 9.75, true, false, receipt3)
 ic = Item.new("box of chocolate", 11.25, true, true, receipt3)
-
-puts receipt1.item_list
-puts receipt2.item_list
-puts receipt3.item_list
+# 
+# puts receipt1.item_list
+# puts receipt2.item_list
+# puts receipt3.item_list
+receipt1.report
