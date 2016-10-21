@@ -30,9 +30,12 @@ attr_accessor :item_list
     @item_list.each do |item|
       puts "1 #{item.name} at $#{item.cost}"
     end
-
-    puts "Sales Taxes: #{tax_total}"
-    puts "Total:       #{total_cost}"
+    puts ""
+    puts ""
+    puts "Sales Taxes: #{'%.2f' % tax_total}"
+    puts "Total:       #{'%.2f' % total_cost}"
+    puts ""
+    puts ""
   end
 end
 
